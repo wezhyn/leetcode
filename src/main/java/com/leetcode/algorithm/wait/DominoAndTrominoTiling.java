@@ -1,4 +1,4 @@
-package com.leetcode.dp.wait;
+package com.leetcode.algorithm.wait;
 
 /**
  * DP1 输入是 O(n)

@@ -1,4 +1,4 @@
-package com.leetcode.dp;
+package com.leetcode.algorithm;
 
 /**
  * DP1: 输入是 O(n), 空间 O(n) -> O(1)
