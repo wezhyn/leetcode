@@ -1,6 +1,8 @@
 package com
 
 /**
+ * Disjoint-Set 并查集
+ *
  * 成环检测
  * @author wezhyn
  * @since 06.16.2020
