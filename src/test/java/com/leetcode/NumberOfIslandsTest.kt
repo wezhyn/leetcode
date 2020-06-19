@@ -1,6 +1,7 @@
 package com.leetcode
 
 import org.junit.Test
+import kotlin.test.assertEquals
 
 /**
  * @author wezhyn
@@ -10,10 +11,10 @@ class NumberOfIslandsTest {
 
     @Test
     fun numIslands() {
-        NumberOfIslands().numIslands(arrayOf(
+        assertEquals(1, NumberOfIslands().numIslands(arrayOf(
                 charArrayOf('1', '1', '1'),
                 charArrayOf('0', '1', '0'),
                 charArrayOf('1', '1', '1')
-        )).apply(System.out::println)
+        )))
     }
 }
