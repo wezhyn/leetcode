@@ -1,7 +1,6 @@
 package com
 
 import java.nio.file.Path
-import java.nio.file.Paths
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -11,20 +10,6 @@ import kotlin.collections.ArrayList
  * @since 06.15.2020
  *
  */
-
-fun main() {
-    val s = "{0, 1, 2, 3, 4}," +
-            "{1, 0, 5, 0, 7}," +
-            "{2, 5, 0, 6, 0}," +
-            "{3, 0, 6, 0, 0}," +
-            "{4, 7, 0, 0, 0}"
-    s.twoDimensional('{')
-            .forEach { print(Arrays.toString(it)) }
-
-    val directEdgeGraph = Paths.get("src/main/resources/tinyEWD.txt")
-            .loadDirectEdgeGraph<Double>().Dijkstra().sp()
-    println(directEdgeGraph.contentDeepToString())
-}
 
 inline fun runTime(action: (Unit) -> Unit) {
     val startTime = System.currentTimeMillis()
@@ -61,27 +46,75 @@ fun String.oneDimensional(): List<Int> {
     return result
 }
 
-fun String.twoDimensional(segmentation: Char = '['): Array<Array<Int>> {
-    val result: MutableList<MutableList<Int>> = ArrayList()
-    for (i in this.indices) {
-        val c: Char = this[i]
-        if (c == segmentation) {
-            result.add(ArrayList())
-        }
-        if (c.isDigit()) {
-            result[result.size - 1].add(c - '0')
-        }
-    }
-    if (result.size == 0) {
-        return Array(0) { Array<Int>(0) { 0 } }
-    }
-    val ans = Array(result.size) { Array<Int>(result[0].size) { 0 } }
-    for (i in result.indices) {
-        val r: List<Int> = result[i]
-        for (i1 in r.indices) {
-            ans[i][i1] = r[i1]
-        }
+/**
+ * T: IntArray ,R :int
+ * T: BooleanArray,R:Boolean
+ */
+inline fun <reified T, reified R : Any> String.twoPrimitiveArray(prefix: String = "[", suffix: String = "]", segmentation: String = ",",
+                                                                 convert: (String) -> R): Array<T> {
+    return twoListArray<T, R>(prefix, suffix, segmentation, convert).toTypedArray()
+}
+
+/**
+ * T: IntArray ,R :int
+ * T: BooleanArray,R:Boolean
+ */
+inline fun <reified R : Any> String.twoArray(prefix: String = "[", suffix: String = "]", segmentation: String = ",",
+                                             convert: (String) -> R): Array<Array<R>> {
+    val twoList = twoList(prefix, suffix, segmentation, convert)
+    if (twoList.isEmpty()) return emptyArray()
+
+    val ans = Array<Array<R>>(twoList.size) {
+        twoList[it].toTypedArray()
     }
     return ans
+}
 
+/**
+ * T: IntArray ,R :int
+ * T: BooleanArray,R:Boolean
+ */
+inline fun <reified T, reified R : Any> String.twoListArray(prefix: String = "[", suffix: String = "]", segmentation: String = ",",
+                                                            convert: (String) -> R): List<T> {
+    val result = this.twoList(prefix, suffix, segmentation, convert)
+    if (result.isEmpty()) {
+        return emptyList()
+    }
+    val ans = ArrayList<T>()
+    val jclass = T::class.java
+    if (!jclass.isArray) {
+        throw IllegalArgumentException("非数组类型")
+    }
+    for ((i, list) in result.withIndex()) {
+        val array = java.lang.reflect.Array.newInstance(R::class.javaPrimitiveType, list.size)
+        for ((index, element) in list.withIndex()) {
+            val field = element::class.java.getDeclaredField("value")
+            field.isAccessible = true
+            java.lang.reflect.Array.set(array, index, field.get(element))
+        }
+        ans.add(array as T)
+    }
+    return ans
+}
+
+inline fun <reified R : Any> String.twoList(prefix: String = "[", suffix: String = "]", segmentation: String = ",",
+                                            convert: (String) -> R): List<List<R>> {
+    val result = ArrayList<MutableList<R>>()
+    var l = 0
+    var r = 0
+    while (r != -1 && l != -1) {
+        l = this.indexOf(prefix, l)
+        r = this.indexOf(suffix, r)
+        if (r == -1 || l == -1) {
+            break
+        }
+        val elementArray = this.substring(l + 1, r).split(segmentation, ignoreCase = true)
+        result.add(ArrayList())
+        for (e in elementArray) {
+            result[result.size - 1].add(convert.invoke(e.trim()))
+        }
+        l = r
+        r++
+    }
+    return result
 }

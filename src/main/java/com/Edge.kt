@@ -9,22 +9,6 @@ import kotlin.collections.ArrayList
  * @since 06.16.2020
  *
  */
-
-fun main() {
-    val s = "{3, 1, 2, 3, 4}," +
-            "{1, 3, 5, 3, 7}," +
-            "{2, 5, 3, 6, 3}," +
-            "{3, 3, 6, 3, 3}," +
-            "{4, 7, 3, 3, 3}"
-    val twoDimensional = s.twoDimensional('{')
-    val graph = EdgeGraph(5, twoDimensional = twoDimensional)
-    val spanningTree = graph.LazyPrimMst().spanningTree()
-    println(spanningTree)
-    val kruskalTree = graph.KruskalMst().spanningTree()
-    println(kruskalTree)
-
-}
-
 class Edge<T : Comparable<T>>(val from: Int, val to: Int, val weight: T) : Comparable<Edge<T>> {
 
     override fun toString(): String {
@@ -165,7 +149,6 @@ class DirectedEdgeGraph<T>(private val vertex: Int, edges: List<Edge<T>>) : Grap
             edgeTo = Array(out.vertex) { null }
             distTo = Array(out.vertex) { if (it == 0) 0.0 else Double.MAX_VALUE }
 //            weight int
-
             val queue = TreeMap<Double, Int>().apply { put(0.0, 0) }
             while (queue.isNotEmpty()) {
                 val v = queue.pollFirstEntry().value

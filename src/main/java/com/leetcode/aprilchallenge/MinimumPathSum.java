@@ -1,19 +1,10 @@
 package com.leetcode.aprilchallenge;
 
-import com.UtilsKt;
-import org.junit.Assert;
-import org.junit.Test;
-
 /**
  * @author wezhyn
  * @since 04.19.2020
  */
 public class MinimumPathSum {
-
-    @Test
-    public void test() {
-        Assert.assertEquals(7, minPathSum(UtilsKt.twoDimensional("[1,3,1],[1,5,1],[4,2,1]", ']')));
-    }
 
 
     public int minPathSum(Integer[][] grid) {
