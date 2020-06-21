@@ -27,6 +27,7 @@ interface Graph<T : Comparable<T>> {
 
     fun graph(): Array<Array<Edge<T>>>
 
+
     fun v(): List<Int> {
         val result = ArrayList<Int>()
         for (i in graph().indices) {
@@ -34,7 +35,6 @@ interface Graph<T : Comparable<T>> {
         }
         return result
     }
-
 }
 
 class EdgeGraph<T>(val vertex: Int, private val twoDimensional: Array<Array<T>>) : Graph<T>
@@ -141,33 +141,6 @@ class DirectedEdgeGraph<T>(private val vertex: Int, edges: List<Edge<T>>) : Grap
         return graph[v].toTypedArray()
     }
 
-    inner class Dijkstra {
-        private lateinit var edgeTo: Array<Edge<T>?>
-        private lateinit var distTo: Array<Double>
-        fun sp(): Array<Edge<T>?> {
-            val out = this@DirectedEdgeGraph
-            edgeTo = Array(out.vertex) { null }
-            distTo = Array(out.vertex) { if (it == 0) 0.0 else Double.MAX_VALUE }
-//            weight int
-            val queue = TreeMap<Double, Int>().apply { put(0.0, 0) }
-            while (queue.isNotEmpty()) {
-                val v = queue.pollFirstEntry().value
-                val vertexEdges = out.graph[v].forEach { edge ->
-                    val oldDis = distTo[edge.to]
-                    val newDis = distTo[edge.from] + edge.weight.toDouble()
-                    if (oldDis > newDis) {
-                        edgeTo[edge.to] = edge
-                        distTo[edge.to] = newDis
-                        if (queue.containsValue(edge.to)) {
-                            queue.replace(oldDis, edge.to)
-                        }
-                        queue[newDis] = edge.to
-                    }
-                }
-            }
-            return edgeTo
-        }
-    }
 
     override fun graph(): Array<Array<Edge<T>>> {
         return Array(graph.size) { graph[it].toTypedArray() }

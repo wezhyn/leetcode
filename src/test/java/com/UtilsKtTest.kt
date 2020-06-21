@@ -1,5 +1,6 @@
 package com
 
+import org.junit.Assert.assertArrayEquals
 import org.junit.Test
 import java.nio.file.Paths
 
@@ -21,7 +22,12 @@ class UtilsKtTest {
                 .forEach { print(it.contentToString()) }
 
         val directEdgeGraph = Paths.get("src/main/resources/tinyEWD.txt")
-                .loadDirectEdgeGraph<Double>().Dijkstra().sp()
-        println(directEdgeGraph.contentDeepToString())
+                .loadDirectEdgeGraph<Double>()
+        println()
+        val dijkstraPath = Dijkstra(directEdgeGraph).sp().apply {
+            println(this.contentDeepToString())
+        }
+        val bellmanFordPath = BellmanFord(directEdgeGraph).sp()
+        assertArrayEquals(dijkstraPath, bellmanFordPath)
     }
 }
