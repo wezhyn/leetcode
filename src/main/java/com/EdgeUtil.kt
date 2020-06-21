@@ -18,3 +18,5 @@ fun createDirectEdgeGraph(twoArray: Array<IntArray>, vertex: Int, hasWeight: Boo
     }
     return DirectedEdgeGraph(vertex, result)
 }
+
+operator fun <T> Graph<T>.get(index: Int): Array<Edge<T>> where T : Comparable<T>, T : Number = adjacency(index)

@@ -45,7 +45,7 @@ class Dijkstra<T>(val graph: DirectedEdgeGraph<T>)
  *  可以处理负权边，但是不能处理负权重环【环上所有边的权重之和小于0】，时间复杂度比Dijkstra较高
  *  主要思想：如果没有负权环，从图中任意一点到另外一点的最短路径，最多经过 n 个节点，n-1 条边
  *
- *
+ *  @see com.leetcode.CheapestFlightsWithinKStops BellmanFord 小变种
  *
  *  > 还可以用来判断是否有负权环，当从给定一点到另外一点经过的顶点数 > N 表示存在一个负权环
  */
