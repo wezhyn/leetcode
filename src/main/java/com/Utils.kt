@@ -132,7 +132,9 @@ inline fun <reified R : Any> String.twoList(prefix: String = "[", suffix: String
         val elementArray = this.substring(l + 1, r).split(segmentation, ignoreCase = true)
         result.add(ArrayList())
         for (e in elementArray) {
-            result[result.size - 1].add(convert.invoke(e.trim()))
+            if (e.isNotBlank()) {
+                result[result.size - 1].add(convert.invoke(e.trim()))
+            }
         }
         l = r
         r++
