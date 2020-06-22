@@ -1,5 +1,6 @@
 package com.leetcode
 
+import com.leetcode.graph.NumberOfIslands
 import org.junit.Test
 import kotlin.test.assertEquals
 

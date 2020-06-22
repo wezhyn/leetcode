@@ -1,4 +1,4 @@
-package com.leetcode
+package com.leetcode.graph
 
 /**
  *
@@ -7,9 +7,6 @@ package com.leetcode
  *
  */
 
-fun main() {
-    RestoreIpAddress().restoreIpAddresses("010010").forEach(System.out::println)
-}
 
 class RestoreIpAddress {
     private final val partNum = 3

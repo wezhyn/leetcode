@@ -1,5 +1,6 @@
 package com.leetcode
 
+import com.leetcode.graph.WordLadder
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

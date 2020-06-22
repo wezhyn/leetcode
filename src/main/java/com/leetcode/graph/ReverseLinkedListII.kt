@@ -1,8 +1,6 @@
-package com.leetcode
+package com.leetcode.graph
 
 import com.ListNode
-import com.createListNodes
-import com.print
 
 /**
  *
@@ -11,12 +9,6 @@ import com.print
  *
  */
 
-fun main() {
-    val listNodes = createListNodes(1, 2, 3, 4, 5, 6, 7)
-    listNodes!!.print()
-    ReverseLinkedListII().reverseBetween(listNodes, 2, 2)?.print()
-
-}
 
 class ReverseLinkedListII {
     fun reverseBetween(head: ListNode?, m: Int, n: Int): ListNode? {

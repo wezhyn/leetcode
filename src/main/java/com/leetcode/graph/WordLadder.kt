@@ -1,4 +1,4 @@
-package com.leetcode
+package com.leetcode.graph
 
 import java.util.*
 import kotlin.collections.HashSet

@@ -1,5 +1,6 @@
 package com.leetcode
 
+import com.leetcode.graph.CourseSchedule
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

@@ -1,5 +1,6 @@
 package com.leetcode
 
+import com.leetcode.graph.RedundantConnection
 import org.junit.Assert.assertArrayEquals
 import org.junit.Test
 

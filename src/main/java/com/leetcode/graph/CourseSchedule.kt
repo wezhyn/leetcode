@@ -1,4 +1,4 @@
-package com.leetcode
+package com.leetcode.graph
 
 /**
  * 给定一组有向边，检查是否含有环

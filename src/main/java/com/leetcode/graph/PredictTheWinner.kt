@@ -1,6 +1,4 @@
-package com.leetcode
-
-import com.oneDimensional
+package com.leetcode.graph
 
 /**
  *
@@ -46,12 +44,6 @@ Finally, player 1 has more score (234) than player 2 (12), so you need to return
  *
  */
 
-fun main() {
-    PredictTheWinner().PredictTheWinner("[1, 5, 2]".oneDimensional().toIntArray())
-            .apply(System.out::println)
-    PredictTheWinner().dpPredictTheWinner("[1, 5, 2]".oneDimensional().toIntArray())
-            .apply(System.out::println)
-}
 
 class PredictTheWinner {
     private lateinit var dp: Array<IntArray>
