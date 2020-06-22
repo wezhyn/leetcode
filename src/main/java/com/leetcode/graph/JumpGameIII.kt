@@ -1,6 +1,6 @@
 package com.leetcode.graph
 
-import com.oneDimensional
+import com.oneList
 import com.runTime
 
 /**
@@ -11,7 +11,7 @@ import com.runTime
  */
 
 fun main() = runTime {
-    JumpGameIII().canReach("[4,2,3,0,3,1,2]".oneDimensional().toIntArray(), 5).apply(System.out::println)
+    JumpGameIII().canReach("[4,2,3,0,3,1,2]".oneList().toIntArray(), 5).apply(System.out::println)
 //    JumpGameIII().canReach("[4,2,3,0,3,1,2]".oneDimensional().toIntArray(), 0).apply(System.out::println)
 //    JumpGameIII().canReach("[3,0,2,1,2]".oneDimensional().toIntArray(), 2).apply(System.out::println)
 }

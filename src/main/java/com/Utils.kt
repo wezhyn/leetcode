@@ -35,7 +35,28 @@ inline fun <reified T> Path.loadDirectEdgeGraph(): DirectedEdgeGraph<T>
     }
 }
 
-fun String.oneDimensional(): List<Int> {
+/**
+ * T: IntArray ,R :Int
+ */
+inline fun <reified T, reified R : Number> String.onePrimitiveArray(delimiter: String = ",", convert: (String) -> R): T {
+    val values = this.split(delimiter)
+    val arr = java.lang.reflect.Array.newInstance(R::class.javaPrimitiveType, values.size)
+    for ((i, v) in values.withIndex()) {
+        java.lang.reflect.Array.set(arr, i, convert.invoke(v.trim()))
+    }
+    return arr as T
+}
+
+inline fun <reified R> String.oneArray(delimiter: String = ",", convert: (String) -> R): Array<R> {
+    val values = this.split(delimiter)
+    val result = ArrayList<R>()
+    for (v in values) {
+        result.add(convert.invoke(v.trim()))
+    }
+    return result.toTypedArray()
+}
+
+fun String.oneList(): List<Int> {
     val result = ArrayList<Int>()
     for (i in this.indices) {
         val c: Char = this[i]
