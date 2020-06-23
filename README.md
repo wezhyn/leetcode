@@ -16,4 +16,6 @@ A,B 轮流选择一个队尾和队首的元素，当队列为空时，判断A,B�
 #### 自底向上回溯模拟
 [DungeonGame](src/main/java/com/leetcode/dp/DungeonGame.kt)
 
-
+#### [hard][DP]
+**[BurstBalloons](src/main/java/com/leetcode/dp/BurstBalloons.kt)**
+> 逆向思维思考子步骤
