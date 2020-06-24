@@ -48,21 +48,14 @@ inline fun <reified T, reified R : Number> String.onePrimitiveArray(delimiter: S
 }
 
 inline fun <reified R> String.oneArray(delimiter: String = ",", convert: (String) -> R): Array<R> {
+    return oneList(delimiter, convert).toTypedArray()
+}
+
+inline fun <reified R> String.oneList(delimiter: String = ",", convert: (String) -> R): List<R> {
     val values = this.split(delimiter)
     val result = ArrayList<R>()
     for (v in values) {
         result.add(convert.invoke(v.trim()))
-    }
-    return result.toTypedArray()
-}
-
-fun String.oneList(): List<Int> {
-    val result = ArrayList<Int>()
-    for (i in this.indices) {
-        val c: Char = this[i]
-        if (c.isDigit()) {
-            result.add(c - '0')
-        }
     }
     return result
 }
