@@ -21,7 +21,8 @@ A,B 轮流选择一个队尾和队首的元素，当队列为空时，判断A,B�
 > 逆向思维思考子步骤
 
 #### 特殊形状的图形 [DP]
-**[MaximalSquare](src/main/java/com/leetcode/dp/MaximalSquare.kt)**
+* 求最大面积正方形： **[MaximalSquare](src/main/java/com/leetcode/dp/MaximalSquare.kt)**
+* 求二维矩形内某一个形状的和 [RangeSumQuery2D](src/main/java/com/leetcode/dp/RangeSumQuery2D.kt)
 
 ### Kotlin 使用
 #### 谨慎 if 表达式
