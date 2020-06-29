@@ -6,6 +6,15 @@
 A,B 轮流选择一个队尾和队首的元素，当队列为空时，判断A,B谁拿取的总数最大
 [StoneGame](src/main/java/com/leetcode/graph/StoneGame.kt)
 
+### 正则表达式匹配[Complex]
+使用递归模拟 ‘*’ 的匹配【状态机】，而不是常规的 while 匹配
+注意如下的表达式：
+```java
+ture -> s= "aab" p= "c*a*b*"
+true -> s="a"    p="ab*"
+```
+[RegularExpressionMatching](src/main/java/com/offer/RegularExpressionMatching.kt)
+
 ### 回溯法
 回溯法适合由多个步骤组成的问题，每一个步骤都有多个选择，
 如果用树形象的表示，在某一个节点有n个子节点，树的叶子节点为最终状态。
