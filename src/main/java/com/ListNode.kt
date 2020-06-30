@@ -35,4 +35,23 @@ class ListNode(var `val`: Int) {
         this.next = next
     }
 
+    override fun equals(other: Any?): Boolean {
+        if (other == null || other !is ListNode) {
+            return false
+        }
+        val o = other as ListNode
+        if (this.`val` == o.`val`) {
+            if (this.next == null && o.next == null) {
+                return true
+            }
+            return this.next?.equals(o.next) ?: false
+        }
+        return false
+    }
+
+    override fun hashCode(): Int {
+        var result = `val`
+        result = 31 * result + (next?.hashCode() ?: 0)
+        return result
+    }
 }

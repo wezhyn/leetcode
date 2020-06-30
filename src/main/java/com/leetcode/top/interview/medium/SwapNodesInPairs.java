@@ -1,7 +1,6 @@
 package com.leetcode.top.interview.medium;
 
-import com.leetcode.top.interview.ListNode;
-import org.junit.Test;
+import com.ListNode;
 
 /**
  * @author wezhyn
@@ -9,28 +8,20 @@ import org.junit.Test;
  */
 public class SwapNodesInPairs {
 
-    @Test
-    public void test() {
-        ListNode node=new ListNode(1);
-        node.next=new ListNode(4);
-        node.next.next=new ListNode(3);
-        node.next.next.next=new ListNode(4);
-        ListNode.traverse(swapPairs(node));
-    }
 
     public ListNode swapPairs(ListNode head) {
-        ListNode cur=head;
-        ListNode pre=new ListNode(-1);
-        head=pre;
-        pre.next=cur;
-        while (cur!=null && cur.next!=null) {
-            ListNode next=cur.next;
-            pre.next=next;
-            cur.next=next.next;
-            next.next=cur;
-            pre=cur;
-            cur=cur.next;
+        ListNode cur = head;
+        ListNode pre = new ListNode(-1);
+        head = pre;
+        pre.setNext(cur);
+        while (cur != null && cur.getNext() != null) {
+            ListNode next = cur.getNext();
+            pre.setNext(next);
+            cur.setNext(next.getNext());
+            next.setNext(cur);
+            pre = cur;
+            cur = cur.getNext();
         }
-        return head.next;
+        return head.getNext();
     }
 }
