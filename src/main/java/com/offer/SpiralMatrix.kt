@@ -20,6 +20,7 @@ class SpiralMatrix {
         }
         val m = matrix.size
         val n = matrix[0].size
+//        多余的记录，只需要记录最后一圈
         val visited = Array(matrix.size) { IntArray(matrix[it].size) }
         val result = ArrayList<Int>()
         val v = { x: Int, y: Int ->
