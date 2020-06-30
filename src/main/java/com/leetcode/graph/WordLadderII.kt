@@ -81,7 +81,7 @@ class WordLadderII {
 
 
     //        每一个节点一定有父节点
-    class Node(val str: String) {
+    private class Node(val str: String) {
         lateinit var parent: Node
         var level = 1
         val childs = ArrayList<Node>()
