@@ -32,12 +32,12 @@ public class MergeTwoSortedLists {
         return guard.next;
     }
 
-    public static class ListNode {
+    private static class ListNode {
         int val;
         ListNode next;
 
         ListNode(int x) {
-            val=x;
+            val = x;
         }
     }
 }
