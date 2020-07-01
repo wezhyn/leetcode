@@ -1,5 +1,3 @@
-
-
 ## 典型题型
 
 ### Min-Max
@@ -38,7 +36,9 @@ true -> s="a"    p="ab*"
 
 [LinkedListCycleII](src/main/java/com/offer/LinkedListCycleII.kt)
 
-
+### Divide and conquer
+#### 使用组合进行细节的封装
+[ConvertBinarySearchTreeToSortedDoublyLinkedList](src/main/java/com/offer/ConvertBinarySearchTreeToSortedDoublyLinkedList.kt)
 
 
 ### SP

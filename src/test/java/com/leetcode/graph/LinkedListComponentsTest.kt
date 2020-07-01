@@ -1,7 +1,8 @@
 package com.leetcode.graph
 
-import com.oneListNode
+import com.ListNode
 import com.onePrimitiveArray
+import com.oneSingleNode
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -14,7 +15,7 @@ class LinkedListComponentsTest {
     @Test
     fun numComponents() {
         assertEquals(1, LinkedListComponents().numComponents(
-                "0->3->2->1".oneListNode(delimiters = "->"), "2, 0, 3".onePrimitiveArray { it.toInt() }
+                "0->3->2->1".oneSingleNode<ListNode>(delimiters = "->"), "2, 0, 3".onePrimitiveArray { it.toInt() }
         ))
     }
 }
