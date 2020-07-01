@@ -18,8 +18,11 @@ true -> s="a"    p="ab*"
 如果用树形象的表示，在某一个节点有n个子节点，树的叶子节点为最终状态。
 在当前叶子节点不满足约束时，回溯到上一个节点
 
-字典中回溯寻找单词
+#### 字典中回溯寻找单词
 [WordSearch](src/main/java/com/offer/WordSearch.kt)
+
+#### 全排序
+[Permutations](src/main/java/com/offer/Permutations.kt)
 
 ### 双指针
 #### 一维数组中使用双指针排序

@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
  * 3，1，2
  *
  * @author wezhyn
- * @see Permutations
  * @since 04.13.2020
  */
 public class DistinctPermutations {
