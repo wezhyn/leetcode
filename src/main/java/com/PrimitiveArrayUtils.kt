@@ -6,7 +6,11 @@ package com
  * @since 07.02.2020
  *
  */
-fun String.toIntArray(delimiter: String = ","): IntArray {
+fun String.intList(delimiter: String = ","): List<Int> {
+    return this.oneList(delimiter) { it.toInt() }
+}
+
+fun String.intArray(delimiter: String = ","): IntArray {
     return this.onePrimitiveArray { it.toInt() }
 }
 
