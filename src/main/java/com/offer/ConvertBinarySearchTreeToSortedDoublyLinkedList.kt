@@ -1,7 +1,7 @@
 package com.offer
 
 import com.BinaryTreeNode
-import com.IntDoubleNode
+import kotlin.reflect.KProperty
 
 /**
  * 将一个搜索二叉树转变成一个双向链表，只允许修改原节点中的指针
@@ -38,19 +38,29 @@ class ConvertBinarySearchTreeToSortedDoublyLinkedList {
 
     }
 
+    class CombinationNode(private val _left: BinaryTreeNode, private val _right: BinaryTreeNode) {
+        var left: BinaryTreeNode? by CombinationDelete(_left, _right, true)
+        var right: BinaryTreeNode? by CombinationDelete(_left, _right, false)
+    }
 
-    class CombinationNode(private val _left: BinaryTreeNode, private val _right: BinaryTreeNode) : IntDoubleNode<BinaryTreeNode> {
-
-        override var left: BinaryTreeNode?
-            get() = _left
-            set(value) {
-                _left.left = value
+    private class CombinationDelete(private val _left: BinaryTreeNode, private val _right: BinaryTreeNode, private val isLeft: Boolean) {
+        operator fun getValue(thisRef: CombinationNode?, property: KProperty<*>): BinaryTreeNode? {
+            return if (isLeft) {
+                _left
+            } else {
+                _right
             }
-        override var right: BinaryTreeNode?
-            get() = _right
-            set(value) {
+        }
+
+        operator fun setValue(thisRef: CombinationNode?, property: KProperty<*>, value: BinaryTreeNode?) {
+            return if (isLeft) {
+                _left.left = value
+            } else {
                 _right.right = value
             }
+        }
+
+
     }
 
 
