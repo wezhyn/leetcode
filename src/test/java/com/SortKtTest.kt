@@ -16,7 +16,7 @@ class SortKtTest {
     }
 
     private fun print(array: Array<Int>) {
-        quickSort(array)
+        mergeSort(array)
         println(array.contentDeepToString())
     }
 }
