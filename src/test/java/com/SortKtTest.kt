@@ -10,8 +10,12 @@ class SortKtTest {
 
     @Test
     fun quickSort() {
-        val array = arrayOf(1, 3, 2, 5, 3, 6, 2, 10, 23, 54, 2, 3, 43, 23, 12, 14)
+        print(arrayOf(10, 9, 8, 7, 6, 5, 4, 3, 2, 1))
+        print(arrayOf(-1, -2, -3, -5, -4, -6, -7))
+        print(arrayOf(1, 1, -1, 0, 3, 2, 5, 3, 6, 2, 10, 23, 54, 2, 3, 43, 23, 12, 14))
+    }
 
+    private fun print(array: Array<Int>) {
         quickSort(array)
         println(array.contentDeepToString())
     }

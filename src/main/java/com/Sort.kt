@@ -1,5 +1,7 @@
 package com
 
+import kotlin.random.Random
+
 /**
  *
  * @author wezhyn
@@ -18,9 +20,39 @@ private fun <T : Comparable<T>> partition(array: Array<T>, l: Int, r: Int) {
     if (l >= r) {
         return
     }
-    val medium = doPartition(array, l, r)
+    val medium = doDoublePartition(array, l, r)
     partition(array, l, medium - 1)
     partition(array, medium, r)
+}
+
+/**
+ * 将给定数组排序成 (l,li) < flag  (ri,r]>flag
+ */
+private fun <T : Comparable<T>> doDoublePartition(array: Array<T>, l: Int, r: Int): Int {
+    if (l >= r) {
+        return l
+    }
+    val flag = randomSwap(array, l, r)
+    var li = l + 1
+    var ri = r
+    while (true) {
+        while (li <= ri && array[li] < flag) {
+            li++
+        }
+        while (ri >= li && array[ri] > flag) {
+            ri--
+        }
+        if (li < ri) {
+            array.swap(li, ri)
+            li++
+            ri--
+        } else {
+            break
+        }
+    }
+    array.swap(l, li - 1)
+    return li
+
 }
 
 /**
@@ -30,22 +62,27 @@ private fun <T : Comparable<T>> doPartition(array: Array<T>, l: Int, r: Int): In
     if (l >= r) {
         return l
     }
-    val flag = array[l]
+    val flag = randomSwap(array, l, r)
 //    medium 指向下一个平衡的位置
     var medium = l + 1
     for (i in l + 1..r) {
         when (array[i] >= flag) {
             false -> {
-                val m = array[medium]
-                array[medium] = array[i]
-                array[i] = m
+                array.swap(medium, i)
                 medium++
             }
             true -> {
             }
         }
     }
-    array[l] = array[medium - 1]
-    array[medium - 1] = flag
+    array.swap(medium - 1, l)
     return medium
+}
+
+private fun <T : Comparable<T>> randomSwap(array: Array<T>, l: Int, r: Int): T {
+    require(r >= l)
+    val i = Random(System.currentTimeMillis()).nextInt(r - l + 1) + l
+    val result = array[i]
+    array.swap(i, l)
+    return result
 }
