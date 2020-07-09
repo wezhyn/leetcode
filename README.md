@@ -4,7 +4,7 @@
 A,B 轮流选择一个队尾和队首的元素，当队列为空时，判断A,B谁拿取的总数最大
 [StoneGame](src/main/java/com/leetcode/graph/StoneGame.kt)
 ### 规律
-寻找数字间存在的规律
+寻找数字间存在的规律，划分区间
 [NumberOfDigitOne](src/main/java/com/offer/NumberOfDigitOne.kt)
 
 ### 正则表达式匹配[Complex]
