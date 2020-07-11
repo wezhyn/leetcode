@@ -80,8 +80,15 @@ true -> s="a"    p="ab*"
 跳表的构建过程
 1. 在插入过程中，只保证向下和向左查找
 2. 直到最下层中找到插入位置，将target 置成随机层高，如果当前随机层高大于当前最大层高，则从head中的每一层的末尾指向当前target
+[自我丑陋版SkipList](src/main/java/com/CollectionsUtil.kt)
 
 ![skiplist.png](https://lotabout.me/2018/skip-list/skip-list-insert-17.svg)
+
+### 并查集
+使用一个数组保存各节点之间的连接信息，可以用来判断给定的节点是否存在环路
+[简陋版UF](src/main/java/com/UF.kt)
+
+![uf.png](https://oi-wiki.org/ds/images/dsu1.png)
 
 
 
