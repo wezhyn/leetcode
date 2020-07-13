@@ -12,35 +12,38 @@ import com.ListNode
 
 class ReverseLinkedListII {
     fun reverseBetween(head: ListNode?, m: Int, n: Int): ListNode? {
-        val newHead = ListNode(-1)
-//        head 的前一个节点
-        var pre = newHead
-        var cur: ListNode? = head
+        val h = ListNode(-1)
+        var pre: ListNode = h
+        var cur: ListNode = head ?: return null
         var index = 1
-        loop@ while (true) {
+        var mNode: ListNode? = null
+        while (true) {
             when (index) {
                 in m..n -> {
-                    if (cur == null) {
-                        break@loop
+                    if (index == m) {
+                        mNode = cur
                     }
-                    val curNext: ListNode? = cur.next
-                    pre.next = ListNode(cur.`val`, pre.next)
-                    cur = curNext
+                    val next = cur.next
+                    cur.next = pre.next
+                    pre.next = cur
+                    if (next == null || index == n) {
+//                        当获取到最后一个节点时，将第一个m 的next指向m的下一个元素
+                        mNode?.next = next
+                        if (next == null) {
+                            return h.next
+                        }
+                        pre = mNode!!
+                    }
+                    cur = next
                 }
                 else -> {
-                    if (cur == null) {
-                        break@loop
-                    }
-                    while (pre.next != null) {
-                        pre = pre.next!!
-                    }
-                    pre.next = ListNode(cur.`val`)
-                    pre = pre.next!!
-                    cur = cur.next
+                    val next = cur.next ?: return h.next
+                    pre.next = cur
+                    pre = cur
+                    cur = next
                 }
             }
             index++
         }
-        return newHead.next
     }
 }

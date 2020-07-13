@@ -1,3 +1,11 @@
+## 总结
+
+### LinkedList
+* 快慢指针寻找中间节点
+* [链表的反转](src/main/java/com/leetcode/graph/ReverseLinkedList.kt)
+
+[Palindrome Linked List]
+
 ## 典型题型
 
 ### Min-Max
