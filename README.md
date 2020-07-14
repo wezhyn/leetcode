@@ -1,11 +1,3 @@
-## 总结
-
-### LinkedList
-* 快慢指针寻找中间节点
-* [链表的反转](src/main/java/com/leetcode/graph/ReverseLinkedList.kt)
-
-[Palindrome Linked List]
-
 ## 典型题型
 
 ### Min-Max
@@ -42,16 +34,19 @@ true -> s="a"    p="ab*"
 #### 一维数组中使用双指针排序
 [SortArrayByParity](src/main/java/com/offer/SortArrayByParity.kt)
 
-#### 有环链表下快慢指针的特性
+### LinkedList
+* 快慢指针寻找中间节点
 第一次快慢指针从 Head 节点出发，快指针走两步，慢指针走一步，在慢指针走到环头节点前，快慢指针就会相遇，
-如下图中的-2
+
 第一个快指针都过得路程为 x+y1+y2+y1
-第二个满指针走过的路程为 x+y1
-所以 x=y2
-所以只需要在头节点和相遇节点共同走x步，就会一起到达环头节点
+
+第二个满指针走过的路程为 x+y1，所以 x=y2，只需要在头节点和相遇节点共同走x步，就会一起到达环头节点
 ![LinkedCycleII](img/LinkedListCycleII.png)
 
 [LinkedListCycleII](src/main/java/com/offer/LinkedListCycleII.kt)
+* [链表的反转](src/main/java/com/leetcode/graph/ReverseLinkedList.kt)
+
+[Palindrome Linked List 两者的结合](src/main/java/com/leetcode/list/PalindromeLinkedList.kt)
 
 ### Divide and conquer
 #### 使用组合进行细节的封装
