@@ -7,7 +7,11 @@ A,B 轮流选择一个队尾和队首的元素，当队列为空时，判断A,B�
 寻找数字间存在的规律，划分区间
 
 [NumberOfDigitOne](src/main/java/com/offer/NumberOfDigitOne.kt)
+
 [NthDigit](src/main/java/com/offer/NthDigit.kt)
+
+丑数：2<sup>i</sup>3<sup>j</sup>5<sup>k</sup>
+[丑数](src/main/java/com/offer/UglyNumberII.kt)
 
 
 ### 正则表达式匹配[Complex]

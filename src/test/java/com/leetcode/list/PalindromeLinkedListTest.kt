@@ -16,8 +16,7 @@ class PalindromeLinkedListTest {
     fun isPalindrome() {
         assertTrue(PalindromeLinkedList().isPalindrome("2->2->3->3->2->2".oneSingleNode<ListNode>(delimiters = "->") { it.toInt() }))
         assertTrue(PalindromeLinkedList().isPalindrome("2->2".oneSingleNode<ListNode>(delimiters = "->") { it.toInt() }))
-        assertFalse(PalindromeLinkedList().isPalindrome("2".oneSingleNode<ListNode>(delimiters = "->") { it.toInt() }))
-        assertFalse(PalindromeLinkedList().isPalindrome("1".oneSingleNode<ListNode>(delimiters = "->") { it.toInt() }))
+        assertTrue(PalindromeLinkedList().isPalindrome("2".oneSingleNode<ListNode>(delimiters = "->") { it.toInt() }))
         assertFalse(PalindromeLinkedList().isPalindrome("1->2->2->3".oneSingleNode<ListNode>(delimiters = "->") { it.toInt() }))
         assertFalse(PalindromeLinkedList().isPalindrome("1->2->2".oneSingleNode<ListNode>(delimiters = "->") { it.toInt() }))
         assertTrue(PalindromeLinkedList().isPalindrome("1->2->2->1".oneSingleNode<ListNode>(delimiters = "->") { it.toInt() }))
