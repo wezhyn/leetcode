@@ -2,16 +2,70 @@
 
 ### Min-Max
 A,B 轮流选择一个队尾和队首的元素，当队列为空时，判断A,B谁拿取的总数最大
+
 [StoneGame](src/main/java/com/leetcode/graph/StoneGame.kt)
+给定一个数组，Alex 每次从数组的最左边或者最右边挑选一个，Lee 也是同样的操作，每次每人的选择都是最优的<br>
+求最后的输赢关系
+
+*Example 1:*
+
+```
+Input: [5,3,4,5]
+Output: true
+Explanation: 
+Alex starts first, and can only take the first 5 or the last 5.
+Say he takes the first 5, so that the row becomes [3, 4, 5].
+If Lee takes 3, then the board is [4, 5], and Alex takes 5 to win with 10 points.
+If Lee takes the last 5, then the board is [3, 4], and Alex takes 4 to win with 9 points.
+This demonstrated that taking the first 5 was a winning move for Alex, so we return true.
+```
+
+<hr>
+
 ### 规律
 寻找数字间存在的规律，划分区间
 
 [NumberOfDigitOne](src/main/java/com/offer/NumberOfDigitOne.kt)
+给定一个n，求 [1,n] 区间内，1 出现的次数
+> Example： <br>
+> Input: 13 <br>
+>Output: 6 <br>
+>Explanation: Digit 1 occurred in the following numbers: 1, 10, 11, 12, 13.
 
-[NthDigit](src/main/java/com/offer/NthDigit.kt)
+[NthDigit](src/main/java/com/offer/NthDigit.kt) 
+给定一个无限长的字符串，规律是 123456789101112..x(x+1)...n<br>
+求第 n 个数字 所在的整数x
+>Input: 11 <br>
+>Output: 0 <br>
+> Explanation:
+ The 11th digit of the sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ... is a 0, which is part of the number 10.
 
-丑数：2<sup>i</sup>3<sup>j</sup>5<sup>k</sup>
-[丑数](src/main/java/com/offer/UglyNumberII.kt)
+
+[丑数](src/main/java/com/offer/UglyNumberII.kt): 2<sup>i</sup>3<sup>j</sup>5<sup>k</sup><br>
+求第 n 个丑数
+> Input: n=10 <br>
+> Output: 12 <br>
+> Explanation: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly numbers.
+
+<hr>
+
+### 排序的变种
+1. 基于归并排序的递归回退思路，从小数组到大数组
+2. 基于快排分治的思路，将数组划分成左右数组
+> 当在数组中使用 O(n<sup>2</sub>)的时间复杂度时，可以考虑使用排序的变种
+
+### 归并 [Reverse Pairs](src/main/java/com/offer/ReversePairs.kt)
+
+Given an array `nums`, we call `(i, j)` an **_important reverse pair_** if `i < j` and `nums[i] > 2*nums[j]`.
+
+You need to return the number of important reverse pairs in the given array.
+
+**Example1:**
+
+```
+Input: [1,3,2,3,1]
+Output: 2
+```
 
 
 ### 正则表达式匹配[Complex]

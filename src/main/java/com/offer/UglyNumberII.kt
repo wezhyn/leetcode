@@ -23,7 +23,6 @@ class UglyNumber {
 }
 
 /**
- * Write a program to find the n-th ugly number.
  * 如何计算丑数：2^i3^j5^y
  * 通过保存之前的丑数 [ugly1,ugly2,ugly3...uglyn]
  * 当前的最大丑数为M
