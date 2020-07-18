@@ -47,6 +47,54 @@ This demonstrated that taking the first 5 was a winning move for Alex, so we ret
 > Output: 12 <br>
 > Explanation: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly numbers.
 
+
+#### N数之和
+##### [Two Sum](src/main/java/com/offer/TwoSum.kt)
+
+Given an array of integers, return **indices** of the two numbers such that they add up to a specific target.
+
+**Example:**
+
+```
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+```
+
+### [3Sum](src/main/java/com/leetcode/top/interview/medium/ThreesSum.java)
+
+Given an array `nums` of _n_ integers, are there elements _a_, _b_, _c_ in `nums` such that _a_ + _b_ + _c_ = 0? Find all unique triplets in the array which gives the sum of zero.
+
+**Example:**
+
+```
+Given array nums = [-1, 0, 1, 2, -1, -4],
+
+A solution set is:
+[
+  [-1, 0, 1],
+  [-1, -1, 2]
+]
+```
+
+
+
+
+#### 位运算[Single Number](src/main/java/com/leetcode/aprilchallenge/SingleInteger.java)
+> todo: 进阶版[Single NumberIII](https://leetcode.com/problems/single-number-iii/)
+> todo: 进阶版[Single NumberIV](剑指Offer)
+
+
+Given a **non-empty** array of integers, every element appears _twice_ except for one. Find that single one.
+
+**Example :**
+
+```
+Input: [2,2,1]
+Output: 1
+```
+
 <hr>
 
 ### 排序的变种(O(n<sup>2</sup>)算法时考虑)
