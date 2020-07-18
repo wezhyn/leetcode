@@ -12,6 +12,9 @@ import java.util.*
 fun String.treeNodeWithNull(segmentation: String = ",",
                             convert: (String) -> Int): TreeNode? {
 
+    if (this.isBlank()) {
+        return null
+    }
     val nums = this.split(segmentation)
     val c = { s: String ->
         if (s.trim() == "null") {

@@ -92,15 +92,61 @@ Input: nums = [-3, -1, 1, 3, 5]
 Output: 3
 ```
 
+### 二叉树的查找
+1. 前序遍历的利用
+2. 中序遍历的利用
+3. 后序遍历的利用[需要对左右子树先行进行特殊处理]
 
-### 正则表达式匹配[Complex]
-使用递归模拟 ‘*’ 的匹配【状态机】，而不是常规的 while 匹配
-注意如下的表达式：
-```java
-ture -> s= "aab" p= "c*a*b*"
-true -> s="a"    p="ab*"
+#### 非递归前序遍历[树的最大深度](src/main/java/com/offer/MaximumDepthOfBinaryTree.kt)
+
+Given a binary tree, find its maximum depth.
+
+**Example:**
+
 ```
-[RegularExpressionMatching](src/main/java/com/offer/RegularExpressionMatching.kt)
+Input:
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+output: 3
+```
+
+
+#### 非递归中序遍历[Kth Smallest Element in a BST](src/main/java/com/offer/KthSmallestElementInABST.kt)
+
+Given a binary search tree, write a function `kthSmallest` to find the **k**th smallest element in it.
+
+**Example:**
+
+```
+Input: root = [3,1,4,null,2], k = 1
+   3
+  / \
+ 1   4
+  \
+   2
+Output: 1
+```
+
+#### 递归后序遍历[检查是否是平衡二叉树](src/main/java/com/offer/KthSmallestElementInABST.kt)
+
+给定一棵二叉树，判断该树是不是平衡二叉树
+> 任意左右子树，高度差不大于1
+
+**Example:**
+
+```
+Input: root = [3,3,8,null,4]
+   5
+  / \
+ 3   8
+  \
+   4
+Output: true
+```
 
 ### 回溯法
 回溯法适合由多个步骤组成的问题，每一个步骤都有多个选择，
@@ -110,7 +156,7 @@ true -> s="a"    p="ab*"
 #### 字典中回溯寻找单词
 [WordSearch](src/main/java/com/offer/WordSearch.kt)
 
-#### 全排序
+#### 数字全排序
 [Permutations](src/main/java/com/offer/Permutations.kt)
 
 ### 双指针
@@ -130,10 +176,6 @@ true -> s="a"    p="ab*"
 * [链表的反转](src/main/java/com/leetcode/graph/ReverseLinkedList.kt)
 
 [Palindrome Linked List 两者的结合](src/main/java/com/leetcode/list/PalindromeLinkedList.kt)
-
-### Divide and conquer
-#### 使用组合进行细节的封装
-[ConvertBinarySearchTreeToSortedDoublyLinkedList](src/main/java/com/offer/ConvertBinarySearchTreeToSortedDoublyLinkedList.kt)
 
 
 ### SP
