@@ -49,12 +49,12 @@ This demonstrated that taking the first 5 was a winning move for Alex, so we ret
 
 <hr>
 
-### 排序的变种
+### 排序的变种(O(n<sup>2</sup>)算法时考虑)
 1. 基于归并排序的递归回退思路，从小数组到大数组
 2. 基于快排分治的思路，将数组划分成左右数组
 > 当在数组中使用 O(n<sup>2</sub>)的时间复杂度时，可以考虑使用排序的变种
 
-### 归并 [Reverse Pairs](src/main/java/com/offer/ReversePairs.kt)
+#### 归并 [Reverse Pairs](src/main/java/com/offer/ReversePairs.kt)
 
 Given an array `nums`, we call `(i, j)` an **_important reverse pair_** if `i < j` and `nums[i] > 2*nums[j]`.
 
@@ -65,6 +65,31 @@ You need to return the number of important reverse pairs in the given array.
 ```
 Input: [1,3,2,3,1]
 Output: 2
+```
+
+
+### 二分查找(有序 O(n))
+> 基于二分的思想，将 O(n) 变成 O(NlogN)
+#### [Find First and Last Position of Element in Sorted Array](src/main/java/com/offer/FindFirstAndLastPositionOfElementInSortedArray.kt)
+
+给定一个有序递增数组，查找目标 `target` 的最左端和最右端
+
+**Example 1:**
+
+```
+Input: nums = [5,7,7,8,8,10], target = 8
+Output: [3,4]
+```
+#### [数组中数值和下标相等的元素](src/main/java/com/offer/NumsEqualsSubscript.kt)
+假设一个单调递增的数组里的每个元素都是整数并且是唯一的。
+
+实现一个函数找出数组中任意一个数值等于其下标的元素。
+
+**Example:**
+
+```
+Input: nums = [-3, -1, 1, 3, 5]
+Output: 3
 ```
 
 
