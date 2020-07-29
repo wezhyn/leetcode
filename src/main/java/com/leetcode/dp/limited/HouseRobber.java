@@ -1,4 +1,4 @@
-package com.leetcode.algorithm;
+package com.leetcode.dp.limited;
 
 /**
  * DP1: 输入是 O(n)
@@ -24,10 +24,6 @@ package com.leetcode.algorithm;
  */
 public class HouseRobber {
 
-    public static void main(String[] args) {
-        int[] houses=new int[]{};
-        System.out.println(new HouseRobber().rob(houses));
-    }
 
     public int rob(int[] nums) {
 //        边界问题:必须大于1

@@ -1,17 +1,7 @@
 package com.leetcode.dp
 
 /**
- * 跟常见的DP不同，从示例的流程中无法发现正常的拆分子流程细节
  * 题目：
- * Given n balloons, indexed from 0 to n-1.
- * Each balloon is painted with a number on it represented by array nums.
- * You are asked to burst all the balloons.
- * If the you burst balloon i you will get nums[left] * nums[i] * nums[right] coins.
- * Here left and right are adjacent indices of i. After the burst, the left and right then becomes adjacent.
- * Find the maximum coins you can collect by bursting the balloons wisely.
- * Example1：
- * Input: [3,1,5,8]
- *  Output: 167
  *  Explanation: nums = [3,1,5,8] --> [3,5,8] -->   [3,8]   -->  [8]  --> []
  *  coins =  3*1*5      +  3*5*8    +  1*3*8      + 1*8*1   = 167
  * > 给定条件，最大数量n 为500，所以最大时间复杂度不能超过 n^3 (纯3次方也过大)

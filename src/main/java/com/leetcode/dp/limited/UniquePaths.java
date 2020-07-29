@@ -1,7 +1,4 @@
-package com.leetcode.top.interview.medium;
-
-import org.junit.Assert;
-import org.junit.Test;
+package com.leetcode.dp.limited;
 
 /**
  * dp 依赖与之前有限个解
@@ -14,12 +11,6 @@ import org.junit.Test;
  */
 public class UniquePaths {
 
-    @Test
-    public void test() {
-        Assert.assertEquals(3, uniquePaths(3, 2));
-        Assert.assertEquals(28, uniquePaths(7, 3));
-        Assert.assertEquals(2000000000, uniquePaths(100, 100));
-    }
 
     public int uniquePaths(int m, int n) {
         int[][] result=new int[m][n];

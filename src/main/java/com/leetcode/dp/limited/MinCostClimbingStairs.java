@@ -1,4 +1,4 @@
-package com.leetcode.algorithm;
+package com.leetcode.dp.limited;
 
 /**
  * DP1: 输入是O(n)
@@ -23,10 +23,6 @@ package com.leetcode.algorithm;
  */
 public class MinCostClimbingStairs {
 
-    public static void main(String[] args) {
-        int[] stairs=new int[]{1, 100};
-        System.out.println(new MinCostClimbingStairs().minCostClimbingStairs(stairs));
-    }
 
     public int minCostClimbingStairs(int[] cost) {
         int dp1=cost[0];

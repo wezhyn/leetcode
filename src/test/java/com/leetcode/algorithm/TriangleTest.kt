@@ -1,5 +1,6 @@
 package com.leetcode.algorithm
 
+import com.leetcode.dp.limited.Triangle
 import com.twoList
 import org.junit.Assert.assertEquals
 import org.junit.Test

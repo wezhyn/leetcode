@@ -1,4 +1,4 @@
-package com.leetcode.algorithm
+package com.leetcode.dp.limited
 
 /**
  * O(n) 的复杂度，就需要倒过来计算

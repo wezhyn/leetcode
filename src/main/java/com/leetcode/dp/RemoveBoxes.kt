@@ -28,7 +28,6 @@ Explanation:
  * 删除11 4 + 22122
  * 删除 1 1 + 112222
  *
- * 官方解答：
  *
  *
  * @see StrangePrinter

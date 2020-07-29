@@ -1,6 +1,5 @@
-package com.leetcode.algorithm;
+package com.leetcode.dp;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,12 +12,9 @@ import java.util.List;
  * 补充：给定字符s 能被分割成重复字典中的单词，例如 leetcodeleet
  * <p>
  * 与 DP1 的不同在于，这个求解是依赖于所有的可能的子解
- * 帮助理解了 递归与dp
- * 与 DP1 不同在于没有明确的状态值和状态转移方程，主要使用的是DP 的本质思想：递归+记忆
- * <p>
  * 输入字符为 s
  * 先检查s[0,k]是否在字典中，再递归检查 [k+1,s.length] 是否在字典中，保存子解
- *
+ * <p>
  * f(x) 为 str[0-i] && dict.contain(key)
  *
  * @author wezhyn
@@ -26,29 +22,27 @@ import java.util.List;
  */
 public class WordBreak {
 
-    private HashMap<String, Boolean> cache=new HashMap<>();
-
-    public static void main(String[] args) {
-        System.out.println(new WordBreak().wordBreak("catsanddog", Arrays.asList("cats", "dog", "sand", "and", "cat")));
-    }
-
+    private HashMap<String, Boolean> cache;
 
     public boolean wordBreak(String s, List<String> wordDict) {
-        if (s.length()==0) {
+        if (s.length() == 0) {
             return true;
         }
-        if (cache.get(s)!=null) {
+        if (cache == null) {
+            cache = new HashMap<>();
+        }
+        if (cache.get(s) != null) {
             return cache.get(s);
         }
-        boolean result=false;
-        for (int i=0; i <= s.length(); i++) {
-            String pre=s.substring(0, i);
-            String sub=s.substring(i);
-            final Boolean isResolved=cache.get(s);
-            if (isResolved!=null) {
+        boolean result = false;
+        for (int i = 0; i <= s.length(); i++) {
+            String pre = s.substring(0, i);
+            String sub = s.substring(i);
+            final Boolean isResolved = cache.get(s);
+            if (isResolved != null) {
                 return isResolved;
             } else {
-                result=result || wordDict.contains(pre) && wordBreak(sub, wordDict);
+                result = result || wordDict.contains(pre) && wordBreak(sub, wordDict);
             }
         }
         if (!result) {
@@ -56,7 +50,6 @@ public class WordBreak {
         }
         return result;
     }
-
 
 
 }

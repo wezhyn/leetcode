@@ -1,8 +1,7 @@
-package com.leetcode.algorithm;
+package com.leetcode.dp.limited;
 
 /**
  * DP1: 输入是 O(n), 空间 O(n) -> O(1)
- * dp(x) 依赖于有限个最优子结构
  * <p>
  * 爬楼梯问题：
  * 记 f(x) 为爬至 x th 层楼梯时的走法
@@ -17,12 +16,6 @@ package com.leetcode.algorithm;
  */
 public class ClimbingStairs {
 
-
-    public static void main(String[] args) {
-        ClimbingStairs climbingStairs=new ClimbingStairs();
-        System.out.println(climbingStairs.climbStairsPro(3));
-        System.out.println(climbingStairs.climbStairsPro(4));
-    }
 
     public int climbStairsPro(int n) {
 //        注意临界值

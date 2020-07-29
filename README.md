@@ -235,20 +235,194 @@ Output: true
 
 ### DP
 将大问题分解成小问题，求解每个子问题的最优解，从而求出大问题的解
-> dp=缓冲数组+递归
-[减绳子](src/main/java/com/offer/CutCord.kt)
-> 无正确性
+1. 每个子问题都有最优解且不会改变
+2. 同样的子问题会重复出现
+> 无重复就退化成了 divide and conquer
+* 使用递归方式【计划递归】
+* 使用循环 【动态规划】
 
-#### 自底向上回溯模拟
-[DungeonGame](src/main/java/com/leetcode/dp/DungeonGame.kt)
+* I: 输入规模
+* S: 子问题规模
+* D: 依赖规模
+> https://www.youtube.com/watch?v=eLlZEYzZVyQ
+#### I(n) S(n) D(1)
+> D(1) 即依赖于有限个解
+**[DominoAndTrominoTiling](src/main/java/com/leetcode/dp/limited/DominoAndTrominoTiling.kt)**
 
-#### [hard][DP]
-**[BurstBalloons](src/main/java/com/leetcode/dp/BurstBalloons.kt)**
-> 逆向思维思考子步骤
+使用如下： 一 和 L 型 进行覆盖2 *N 的面板
 
-#### 特殊形状的图形 [DP]
-* 求最大面积正方形： **[MaximalSquare](src/main/java/com/leetcode/dp/MaximalSquare.kt)**
-* 求二维矩形内某一个形状的和 [RangeSumQuery2D](src/main/java/com/leetcode/dp/RangeSumQuery2D.kt)
+```
+XX  <- domino
+
+XX  <- "L" tromino
+X
+```
+Given N, how many ways are there to tile a 2 x N board? **Return your answer modulo 10^9 + 7**.
+
+```
+Example:
+Input: 3
+Output: 5
+Explanation:
+The five different ways are listed below, different letters indicates different tiles:
+XYZ XXZ XYY XXY XYY
+XYZ YYZ XZZ XYY XXY
+```
+> 类似题型：
+>
+> [Climbing Stairs](src/main/java/com/leetcode/dp/limited/ClimbingStairs.java)
+>
+> [MinCostClimbingStairs](src/main/java/com/leetcode/dp/limited/MinCostClimbingStairs.java)
+>
+> [House Robber](src/main/java/com/leetcode/dp/limited/HouseRobber.java)
+>
+> [UniquePaths](src/main/java/com/leetcode/dp/limited/UniquePaths.java)
+>
+> 交换数组序列【Hard】[MinimumSwapsToMakeSequencesIncreasing](src/main/java/com/leetcode/dp/limited/MinimumSwapsToMakeSequencesIncreasing.kt)
+>
+> 反转字符'0' 和 ’1‘[FlipStringToMonotoneIncreasing](src/main/java/com/leetcode/dp/limited/FlipStringToMonotoneIncreasing.kt)
+>
+
+#### I(n) S(n) D(n)
+> D(n) 依赖于所有比当前 N 规模小的子问题
+
+[Word Break]()
+
+Given a **non-empty** string _s_ and a dictionary _wordDict_ 
+containing a list of **non-empty** words, determine if _s_
+ can be segmented into a space-separated sequence of one or more dictionary words.
+
+**Example 1:**
+
+```
+Input: s = "leetcode", wordDict = ["leet", "code"]
+Output: true
+Explanation: Return true because "leetcode" can be segmented as "leet code".
+```
+
+**Example 2:**
+
+```
+Input: s = "applepenapple", wordDict = ["apple", "pen"]
+Output: true
+Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
+             Note that you are allowed to reuse a dictionary word.
+```
+
+#### I(n) S(n<sup>2</sup>) D(i..j)
+> D(i..j) 依赖与 i..j 内的全部子问题，dp(i,j) 主要依赖于 dp(i,j),dp(i,k),dp(k,j)
+>
+> S(n<sup>2</sup> ) 每个子问题都需要 O(n) 的时间复杂度
+
+[BurstBalloons](src/main/java/com/leetcode/dp/BurstBalloons.kt)
+
+Given n balloons, indexed from 0 to n-1.
+
+Each balloon is painted with a number on it represented by array nums.
+You are asked to burst all the balloons.
+
+If the you burst balloon i you will get nums[left] * nums[i] * nums[right] coins.
+
+Here left and right are adjacent indices of i. After the burst, the left and right then becomes adjacent.
+
+Find the maximum coins you can collect by bursting the balloons wisely.
+  
+Example1：
+
+```
+Input: [3,1,5,8]
+Output: 167
+```
+> 类似题目：
+>
+>[StrangePrinter](src/main/java/com/leetcode/dp/StrangePrinter.kt)
+
+#### I(O(m)+O(n))  S(MN) D(1)
+> I(O(m)+O(n)) 两个数组或字符串
+> S(MN) 二维dp 且通常依赖 dp[i-1][j-1]||dp[i-1][j]||dp[i][j-1]
+
+**[EditDistance](src/main/java/com/leetcode/dp/EditDistance.kt)**
+
+Given two words _word1_ and _word2_, find the minimum number of operations required to convert _word1_ to _word2_.
+
+You have the following 3 operations permitted on a word:
+
+1.  Insert a character
+2.  Delete a character
+3.  Replace a character
+
+ **Example 1:**
+
+```
+Input: word1 = "horse", word2 = "ros"
+Output: 3
+Explanation:
+horse -> rorse (replace 'h' with 'r')
+rorse -> rose (remove 'r')
+rose -> ros (remove 'e')
+```
+
+ **Example 2:**
+
+```
+Input: word1 = "intention", word2 = "execution"
+Output: 5
+Explanation:
+intention -> inention (remove 't')
+inention -> enention (replace 'i' with 'e')
+enention -> exention (replace 'n' with 'x')
+exention -> exection (replace 'n' with 'c')
+exection -> execution (insert 'u')
+```
+
+> 类似题型：
+>[Minimum ASCII Delete Sum for Two Strings]()
+
+#### I(MN) S(MN) D(1)
+
+**[Unique Paths](src/main/java/com/leetcode/dp/limited/UniquePaths.java)**
+
+A robot is located at the top-left corner of a _m_ x _n_ grid (marked 'Start' in the diagram below).
+
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+
+How many possible unique paths are there?
+
+**Example :**
+
+```
+Input: m = 3, n = 2
+Output: 3
+Explanation:
+From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:
+1\. Right -> Right -> Down
+2\. Right -> Down -> Right
+3\. Down -> Right -> Right
+```
+
+>类似题型
+> * 求最大面积正方形： **[MaximalSquare](src/main/java/com/leetcode/dp/MaximalSquare.kt)**
+> * 求二维矩形内某一个形状的和 [RangeSumQuery2D](src/main/java/com/leetcode/dp/RangeSumQuery2D.kt)
+
+#### I(MN) S(MN) D(1)[k,i,j]
+> dp(k,i,j) := sol of (A[0->i][0->j] after k steps) 
+> 只依赖于 1个子问题
+
+**[Out of Boundary Paths](src/main/java/com/leetcode/dp/OutOfBoundaryPaths.kt)**
+
+There is an **m** by **n** grid with a ball. Given the start coordinate **(i,j)** of the ball, you can move the ball to **adjacent** cell or cross the grid boundary in four directions (up, down, left, right). However, you can **at most** move **N** times. Find out the number of paths to move the ball out of grid boundary. The answer may be very large, return it after mod 10<sup>9</sup> + 7.
+
+**Example :**
+
+```
+Input: m = 1, n = 3, N = 3, i = 0, j = 1
+Output: 12
+Explanation:
+```
+![OutOfBoundary](img/outOfBoundaryPaths.jpg)
+
+
+
 
 ## 数据结构
 ### [跳表](https://lotabout.me/2018/skip-list/)
