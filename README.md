@@ -115,6 +115,25 @@ Input: [1,3,2,3,1]
 Output: 2
 ```
 
+#### 快排[SequenceSortPlagiarism](src/main/java/com/code/cts/SequenceSortPlagiarism.java)
+
+给定一个序列，按照 output的顺序进行输出：
+```
+Input: 
+9
+25 84 21 47 15 27 68 35 20
+output:
+  15 20 21 25 47 27 68 35 84
+  15 20 21 25 47 27 68 35 84
+  15 20 21 25 47 27 68 35 84
+  15 20 21 25 35 27 47 68 84
+  15 20 21 25 27 35 47 68 84
+  15 20 21 25 27 35 47 68 84
+```
+
+
+
+
 
 ### 二分查找(有序 O(n))
 > 基于二分的思想，将 O(n) 变成 O(NlogN)
@@ -337,10 +356,10 @@ Output: 167
 >
 >[StrangePrinter](src/main/java/com/leetcode/dp/StrangePrinter.kt)
 >
-> 划分成两个和相等的子序列【0-1背包问题】[PartitionEqualSubsetSum](src/main/java/com/leetcode/dp/PartitionEqualSubsetSum.kt)
+> 划分成两个和相等的子序列【0-1背包问题】[PartitionEqualSubsetSum](src/main/java/com/leetcode/dp/knapsack/PartitionEqualSubsetSum.kt)
 >
-> [给定金额求有多少种组合【完全背包问题】](src/main/java/com/leetcode/dp/CoinChange2.kt)
-> [给定金额求硬币的最少数量【完全背包问题】](src/main/java/com/leetcode/dp/CoinChange.kt)
+> [给定金额求有多少种组合【完全背包问题】](src/main/java/com/leetcode/dp/knapsack/CoinChange2.kt)
+> [给定金额求硬币的最少数量【完全背包问题】](src/main/java/com/leetcode/dp/knapsack/CoinChange.kt)
 #### I(O(m)+O(n))  S(MN) D(1)
 > I(O(m)+O(n)) 两个数组或字符串
 > S(MN) 二维dp 且通常依赖 dp[i-1][j-1]||dp[i-1][j]||dp[i][j-1]

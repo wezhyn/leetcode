@@ -1,5 +1,6 @@
 package com.leetcode.dp
 
+import com.leetcode.dp.knapsack.CoinChange2
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

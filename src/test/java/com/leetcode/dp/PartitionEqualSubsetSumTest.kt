@@ -1,5 +1,6 @@
 package com.leetcode.dp
 
+import com.leetcode.dp.knapsack.PartitionEqualSubsetSum
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
