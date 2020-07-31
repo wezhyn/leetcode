@@ -306,7 +306,7 @@ Explanation: Return true because "leetcode" can be segmented as "leet code".
 Input: s = "applepenapple", wordDict = ["apple", "pen"]
 Output: true
 Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
-             Note that you are allowed to reuse a dictionary word.
+            Note that you are allowed to reuse a dictionary word.
 ```
 
 #### I(n) S(n<sup>2</sup>) D(i..j)
@@ -377,6 +377,7 @@ exection -> execution (insert 'u')
 
 > 类似题型：
 >[Minimum ASCII Delete Sum for Two Strings]()
+> 划分成两个和相等的子序列【0-1背包问题】[PartitionEqualSubsetSum](src/main/java/com/leetcode/dp/PartitionEqualSubsetSum.kt)
 
 #### I(MN) S(MN) D(1)
 
@@ -404,7 +405,7 @@ From the top-left corner, there are a total of 3 ways to reach the bottom-right 
 > * 求最大面积正方形： **[MaximalSquare](src/main/java/com/leetcode/dp/MaximalSquare.kt)**
 > * 求二维矩形内某一个形状的和 [RangeSumQuery2D](src/main/java/com/leetcode/dp/RangeSumQuery2D.kt)
 
-#### I(MN) S(MN) D(1)[k,i,j]
+#### I(MN) S(MN) D(NN)[k,i,j]
 > dp(k,i,j) := sol of (A[0->i][0->j] after k steps) 
 > 只依赖于 1个子问题
 
