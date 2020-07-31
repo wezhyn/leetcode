@@ -336,7 +336,10 @@ Output: 167
 > 类似题目：
 >
 >[StrangePrinter](src/main/java/com/leetcode/dp/StrangePrinter.kt)
-
+>
+> 划分成两个和相等的子序列【0-1背包问题】[PartitionEqualSubsetSum](src/main/java/com/leetcode/dp/PartitionEqualSubsetSum.kt)
+>
+> [给定金额求有多少种组合【完全背包问题】](src/main/java/com/leetcode/dp/CoinChange2.kt)
 #### I(O(m)+O(n))  S(MN) D(1)
 > I(O(m)+O(n)) 两个数组或字符串
 > S(MN) 二维dp 且通常依赖 dp[i-1][j-1]||dp[i-1][j]||dp[i][j-1]
@@ -377,7 +380,6 @@ exection -> execution (insert 'u')
 
 > 类似题型：
 >[Minimum ASCII Delete Sum for Two Strings]()
-> 划分成两个和相等的子序列【0-1背包问题】[PartitionEqualSubsetSum](src/main/java/com/leetcode/dp/PartitionEqualSubsetSum.kt)
 
 #### I(MN) S(MN) D(1)
 
