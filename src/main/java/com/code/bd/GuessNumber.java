@@ -1,4 +1,4 @@
-package com.code.jd;
+package com.code.bd;
 
 import java.util.Scanner;
 
