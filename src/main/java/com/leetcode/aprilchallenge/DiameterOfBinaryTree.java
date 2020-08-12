@@ -1,8 +1,6 @@
 package com.leetcode.aprilchallenge;
 
 import com.TreeNode;
-import org.junit.Assert;
-import org.junit.Test;
 
 /**
  * 寻找最长路径，遍历根节点左右，寻找层数最高的左右两个节点
@@ -13,20 +11,6 @@ import org.junit.Test;
  */
 public class DiameterOfBinaryTree {
 
-    @Test
-    public void test() {
-        TreeNode root = new TreeNode(1);
-        Assert.assertEquals(0, diameterOfBinaryTree(root));
-        root.setLeft(new TreeNode(2));
-        Assert.assertEquals(1, diameterOfBinaryTree(root));
-        root.setRight(new TreeNode(3));
-        Assert.assertEquals(2, diameterOfBinaryTree(root));
-        root.setLeft(new TreeNode(4));
-        root.getLeft().setRight(new TreeNode(5));
-        Assert.assertEquals(3, diameterOfBinaryTree(root));
-        root.getLeft().getLeft().setRight(new TreeNode(6));
-        Assert.assertEquals(4, diameterOfBinaryTree(root));
-    }
 
     public int diameterOfBinaryTree(TreeNode root) {
         if (root == null) {
