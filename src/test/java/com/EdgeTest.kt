@@ -7,6 +7,7 @@ import org.junit.Test
  * @since 06.20.2020
  */
 class EdgeTest {
+
     @Test
     fun test() {
         val s = "{3, 1, 2, 3, 4}," +

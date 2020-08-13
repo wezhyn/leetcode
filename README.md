@@ -1,7 +1,7 @@
 ## 典型题型
 
 ### Min-Max
-A,B 轮流选择队尾或队首的一个元素，当队列为空时，判断A,B谁拿取的总数最大
+A,B 轮流选择一个队尾和队首的元素，当队列为空时，判断A,B谁拿取的总数最大
 
 [StoneGame](src/main/java/com/leetcode/graph/StoneGame.kt)
 给定一个数组，Alex 每次从数组的最左边或者最右边挑选一个，Lee 也是同样的操作，每次每人的选择都是最优的<br>
@@ -83,7 +83,7 @@ A solution set is:
 
 #### 位运算[Single Number](src/main/java/com/leetcode/aprilchallenge/SingleInteger.java)
 > todo: 进阶版[Single NumberIII](https://leetcode.com/problems/single-number-iii/)
-> todo: 进阶版[Single NumberIV]()
+> todo: 进阶版[Single NumberIV](剑指Offer)
 
 
 Given a **non-empty** array of integers, every element appears _twice_ except for one. Find that single one.
@@ -464,36 +464,6 @@ Explanation:
 ![uf.png](https://oi-wiki.org/ds/images/dsu1.png)
 
 
-## IDEA 修改
-#### 修改默认Configuration 如下：
-![config](img/configurationConfig.jpg)
-
-![configMap](img/configurationKeyMap.jpg)
-
-整体项目结构如下：
-![configurationPackage](img/configurationPackage.jpg)
-使用 Configuration 快捷键后点击 **Redirect input from** 即可完成文件的输入
-
-#### Nowcoder 模板
-```java
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
-
-import java.util.Scanner;
-
-
-#parse("File Header.java")
-public class ${NAME} {
-
-    public static void main(String[] args) {
-        try (Scanner in = new Scanner(System.in)) {
-            while (in.hasNext()) {
-            
-            }
-        }
-    }
-
-}
-```
 
 ## Kotlin 使用
 #### 谨慎 if 表达式
