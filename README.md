@@ -79,7 +79,21 @@ A solution set is:
 ```
 
 
+#### 值二分法
+> 求最大化的最小值、最小化的最大值问题，通过预测目标结果，进行决策
+Rick 有 n 个空的篮子，第 i 个篮子的位置在 position[i] ，Morty 想把 m 个球放到这些篮子里，使得任意两球间 最小磁力 最大。
+> 已知两个球如果分别位于x和y，那么它们之间的磁力为|x - y
+>
+> 给你一个整数数组position和一个整数m，请你返回最大化的最小磁力
+>
 
+```
+输入：position = [1,2,3,4,7], m = 3
+输出：3
+解释：将 3 个球分别放入位于 1，4 和 7 的三个篮子，两球间的磁力分别为 [3, 3, 6]
+最小磁力为 3 
+```
+![img](img/值二分法.jpg)
 
 #### 位运算[Single Number](src/main/java/com/leetcode/aprilchallenge/SingleInteger.java)
 > todo: 进阶版[Single NumberIII](https://leetcode.com/problems/single-number-iii/)
