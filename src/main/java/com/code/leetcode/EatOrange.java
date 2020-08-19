@@ -21,6 +21,13 @@ import java.util.Map;
  * Leetcode 第一名做法：
  * dp(x) =Math.min(dp(i/2)+i%2+1,dp(i/3)+i%3+1)
  * 即取消了 对 n-1 的做法，使用 2 或者 3代替
+ * <p>
+ * 证明为什么使用 i%2 | i%3 ，而不需要使用超过3的 n-1 的做法
+ * 当 minDays(n) 的最优解为 minDays(n-3)时，此时一定是到达了2的倍数或者3的倍数：
+ * /2 -> minDays(n) = 3+ 1[minDays((n-3)/2)]  -> minDays( (n-1)/2 -1) =4天
+ * 但实际 minDays(n) = 1[minDays(n-1)] + 1[minDays((n-1)/2)] + 1[minDays((n-1)/2-1) =3 天
+ * /3 类似
+ * 所以不需要使用超过3的 N-1 步骤获取最优解
  *
  * @author wezhyn
  * @since 08.16.2020
