@@ -1,8 +1,5 @@
 package com.leetcode.top.interview.easy;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 /**
  * 原想法是最菜的一种，现在采用分而治之+缓存
  *
@@ -13,12 +10,6 @@ public class LongestCommonPrefix {
 
 
 
-    @Test
-    public void test() {
-        Assert.assertEquals("a",longestCommonPrefix(new String[]{"a","ab"}));
-        Assert.assertEquals("fl", longestCommonPrefix(new String[]{"flower", "flow", "flight"}));
-        Assert.assertEquals("", longestCommonPrefix(new String[]{"dog", "racecar", "car"}));
-    }
 
     public String longestCommonPrefix(String[] strs) {
         if (strs.length==1) {
