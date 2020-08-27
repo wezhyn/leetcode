@@ -1,4 +1,4 @@
-package com.leetcode.list
+package com.leetcode.linked
 
 import com.ListNode
 

@@ -94,13 +94,17 @@ Rick 有 n 个空的篮子，第 i 个篮子的位置在 position[i] ，Morty �
 最小磁力为 3 
 ```
 ![img](img/值二分法.jpg)
+[最小磁力](src/main/java/com/code/leetcode/SmallestMagnetic.java)
+
+相关题型：
+> [寻找两个正序数组的中位数](src/main/java/com/leetcode/bs/MedianOfTwoSortedArrays.java)
 
 #### 位运算[Single Number](src/main/java/com/leetcode/aprilchallenge/SingleInteger.java)
 > todo: 进阶版[Single NumberIII](https://leetcode.com/problems/single-number-iii/)
 > todo: 进阶版[Single NumberIV](剑指Offer)
 
 
-Given a **non-empty** array of integers, every element appears _twice_ except for one. Find that single one.
+Given a **non-empty** array of integers, every element appears _twice_ except for one. Find that single one.
 
 **Example :**
 
@@ -208,7 +212,7 @@ Input: root = [3,1,4,null,2], k = 1
   / \
  1   4
   \
-   2
+  2
 Output: 1
 ```
 
@@ -225,7 +229,7 @@ Input: root = [3,3,8,null,4]
   / \
  3   8
   \
-   4
+  4
 Output: true
 ```
 
@@ -248,15 +252,23 @@ Output: true
 * 快慢指针寻找中间节点
 第一次快慢指针从 Head 节点出发，快指针走两步，慢指针走一步，在慢指针走到环头节点前，快慢指针就会相遇，
 
-第一个快指针都过得路程为 x+y1+y2+y1
+>  令 头节点到环形入口节点 长度为a,环形长度为 b 
+> 
+> 令 fast 指针走 f 步，slow 指针走 s 步，则 f=2s
+>
+> 由于存在环，两个指针速度差距为1，则 fast = nb + s = 2s
+>
+> 则 s=nb 
+>
+> 考虑一种新的情况，一个节点走 a+ nb ，那么该节点一定会走到环形入口处
+> 综上，在两指针相遇后，slow 走了nb步，此时在走a步就可以到达环形入口处，此时用
+>另一个指针从 head 节点出发走 a 步，则两指针会在环形入口处相遇
 
-第二个满指针走过的路程为 x+y1，所以 x=y2，只需要在头节点和相遇节点共同走x步，就会一起到达环头节点
-![LinkedCycleII](img/LinkedListCycleII.png)
 
 [LinkedListCycleII](src/main/java/com/offer/LinkedListCycleII.kt)
 * [链表的反转](src/main/java/com/leetcode/graph/ReverseLinkedList.kt)
 
-[Palindrome Linked List 两者的结合](src/main/java/com/leetcode/list/PalindromeLinkedList.kt)
+[Palindrome Linked List 两者的结合](src/main/java/com/leetcode/linked/PalindromeLinkedList.kt)
 
 
 ### SP
