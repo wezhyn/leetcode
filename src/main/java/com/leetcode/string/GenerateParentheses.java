@@ -1,6 +1,4 @@
-package com.leetcode.top.interview.medium;
-
-import org.junit.Test;
+package com.leetcode.string;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,11 +9,6 @@ import java.util.List;
  * @since 04.11.2020
  */
 public class GenerateParentheses {
-
-    @Test
-    public void test() {
-        System.out.println(generateParenthesis(3));
-    }
 
     public List<String> generateParenthesis(int n) {
         if (n==0) {
