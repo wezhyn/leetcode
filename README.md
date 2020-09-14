@@ -3,7 +3,7 @@
 ### Min-Max
 A,B 轮流选择一个队尾和队首的元素，当队列为空时，判断A,B谁拿取的总数最大
 
-[StoneGame](src/main/java/com/leetcode/graph/StoneGame.kt)
+[StoneGame](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/graph/StoneGame.kt)
 给定一个数组，Alex 每次从数组的最左边或者最右边挑选一个，Lee 也是同样的操作，每次每人的选择都是最优的<br>
 求最后的输赢关系
 
@@ -25,14 +25,14 @@ This demonstrated that taking the first 5 was a winning move for Alex, so we ret
 ### 规律
 寻找数字间存在的规律，划分区间
 
-[NumberOfDigitOne](src/main/java/com/offer/NumberOfDigitOne.kt)
+[NumberOfDigitOne](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/NumberOfDigitOne.kt)
 给定一个n，求 [1,n] 区间内，1 出现的次数
 > Example： <br>
 > Input: 13 <br>
 >Output: 6 <br>
 >Explanation: Digit 1 occurred in the following numbers: 1, 10, 11, 12, 13.
 
-[NthDigit](src/main/java/com/offer/NthDigit.kt) 
+[NthDigit](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/NthDigit.kt) 
 给定一个无限长的字符串，规律是 123456789101112..x(x+1)...n<br>
 求第 n 个数字 所在的整数x
 >Input: 11 <br>
@@ -41,7 +41,7 @@ This demonstrated that taking the first 5 was a winning move for Alex, so we ret
  The 11th digit of the sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ... is a 0, which is part of the number 10.
 
 
-[丑数](src/main/java/com/offer/UglyNumberII.kt): 2<sup>i</sup>3<sup>j</sup>5<sup>k</sup><br>
+[丑数](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/UglyNumberII.kt): 2<sup>i</sup>3<sup>j</sup>5<sup>k</sup><br>
 求第 n 个丑数
 > Input: n=10 <br>
 > Output: 12 <br>
@@ -49,7 +49,7 @@ This demonstrated that taking the first 5 was a winning move for Alex, so we ret
 
 
 #### N数之和
-##### [Two Sum](src/main/java/com/offer/TwoSum.kt)
+##### [Two Sum](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/TwoSum.kt)
 
 Given an array of integers, return **indices** of the two numbers such that they add up to a specific target.
 
@@ -62,7 +62,7 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 ```
 
-### [3Sum](src/main/java/com/leetcode/top/interview/medium/ThreesSum.java)
+### [3Sum]()
 
 Given an array `nums` of _n_ integers, are there elements _a_, _b_, _c_ in `nums` such that _a_ + _b_ + _c_ = 0? Find all unique triplets in the array which gives the sum of zero.
 
@@ -94,14 +94,13 @@ Rick 有 n 个空的篮子，第 i 个篮子的位置在 position[i] ，Morty �
 最小磁力为 3 
 ```
 ![img](img/值二分法.jpg)
-[最小磁力](src/main/java/com/code/leetcode/SmallestMagnetic.java)
+[最小磁力](interview/src/main/java/com/leetcode/SmallestMagnetic.java)
 
 相关题型：
-> [寻找两个正序数组的中位数](src/main/java/com/leetcode/bs/MedianOfTwoSortedArrays.java)
+> [寻找两个正序数组的中位数](leetcode-java/src/main/java/com/wezhyn/learn/bs/MedianOfTwoSortedArrays.java)
 
-#### 位运算[Single Number](src/main/java/com/leetcode/aprilchallenge/SingleInteger.java)
+#### 位运算[Single Number](leetcode-java/src/main/java/com/wezhyn/learn/digit/SingleNumber.java)
 > todo: 进阶版[Single NumberIII](https://leetcode.com/problems/single-number-iii/)
-> todo: 进阶版[Single NumberIV](剑指Offer)
 
 
 Given a **non-empty** array of integers, every element appears _twice_ except for one. Find that single one.
@@ -120,7 +119,7 @@ Output: 1
 2. 基于快排分治的思路，将数组划分成左右数组
 > 当在数组中使用 O(n<sup>2</sub>)的时间复杂度时，可以考虑使用排序的变种
 
-#### 归并 [Reverse Pairs](src/main/java/com/offer/ReversePairs.kt)
+#### 归并 [Reverse Pairs](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/ReversePairs.kt)
 
 Given an array `nums`, we call `(i, j)` an **_important reverse pair_** if `i < j` and `nums[i] > 2*nums[j]`.
 
@@ -133,7 +132,7 @@ Input: [1,3,2,3,1]
 Output: 2
 ```
 
-#### 快排[SequenceSortPlagiarism](src/main/java/com/code/cts/SequenceSortPlagiarism.java)
+#### 快排[SequenceSortPlagiarism](interview/src/main/java/com/cts/SequenceSortPlagiarism.java)
 
 给定一个序列，按照 output的顺序进行输出：
 ```
@@ -155,7 +154,7 @@ output:
 
 ### 二分查找(有序 O(n))
 > 基于二分的思想，将 O(n) 变成 O(NlogN)
-#### [Find First and Last Position of Element in Sorted Array](src/main/java/com/offer/FindFirstAndLastPositionOfElementInSortedArray.kt)
+#### [Find First and Last Position of Element in Sorted Array](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/FindFirstAndLastPositionOfElementInSortedArray.kt)
 
 给定一个有序递增数组，查找目标 `target` 的最左端和最右端
 
@@ -165,7 +164,7 @@ output:
 Input: nums = [5,7,7,8,8,10], target = 8
 Output: [3,4]
 ```
-#### [数组中数值和下标相等的元素](src/main/java/com/offer/NumsEqualsSubscript.kt)
+#### [数组中数值和下标相等的元素](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/NumsEqualsSubscript.kt)
 假设一个单调递增的数组里的每个元素都是整数并且是唯一的。
 
 实现一个函数找出数组中任意一个数值等于其下标的元素。
@@ -182,7 +181,7 @@ Output: 3
 2. 中序遍历的利用
 3. 后序遍历的利用[需要对左右子树先行进行特殊处理]
 
-#### 非递归前序遍历[树的最大深度](src/main/java/com/offer/MaximumDepthOfBinaryTree.kt)
+#### 非递归前序遍历[树的最大深度](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/MaximumDepthOfBinaryTree.kt)
 
 Given a binary tree, find its maximum depth.
 
@@ -200,7 +199,7 @@ output: 3
 ```
 
 
-#### 非递归中序遍历[Kth Smallest Element in a BST](src/main/java/com/offer/KthSmallestElementInABST.kt)
+#### 非递归中序遍历[Kth Smallest Element in a BST](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/KthSmallestElementInABST.kt)
 
 Given a binary search tree, write a function `kthSmallest` to find the **k**th smallest element in it.
 
@@ -216,7 +215,7 @@ Input: root = [3,1,4,null,2], k = 1
 Output: 1
 ```
 
-#### 递归后序遍历[检查是否是平衡二叉树](src/main/java/com/offer/KthSmallestElementInABST.kt)
+#### 递归后序遍历[检查是否是平衡二叉树](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/KthSmallestElementInABST.kt)
 
 给定一棵二叉树，判断该树是不是平衡二叉树
 > 任意左右子树，高度差不大于1
@@ -239,14 +238,14 @@ Output: true
 在当前叶子节点不满足约束时，回溯到上一个节点
 
 #### 字典中回溯寻找单词
-[WordSearch](src/main/java/com/offer/WordSearch.kt)
+[WordSearch](leetcode-java/src/main/java/com/wezhyn/learn/daily/WordSearch.java)
 
 #### 数字全排序
-[Permutations](src/main/java/com/offer/Permutations.kt)
+[Permutations](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/Permutations.kt)
 
 ### 双指针
 #### 一维数组中使用双指针排序
-[SortArrayByParity](src/main/java/com/offer/SortArrayByParity.kt)
+[SortArrayByParity](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/SortArrayByParity.kt)
 
 ### LinkedList
 * 快慢指针寻找中间节点
@@ -265,18 +264,18 @@ Output: true
 >另一个指针从 head 节点出发走 a 步，则两指针会在环形入口处相遇
 
 
-[LinkedListCycleII](src/main/java/com/offer/LinkedListCycleII.kt)
-* [链表的反转](src/main/java/com/leetcode/graph/ReverseLinkedList.kt)
+[LinkedListCycleII](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/lcof/LinkedListCycleII.kt)
+* [链表的反转](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/graph/ReverseLinkedList.kt)
 
-[Palindrome Linked List 两者的结合](src/main/java/com/leetcode/linked/PalindromeLinkedList.kt)
+[Palindrome Linked List 两者的结合](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/linked/PalindromeLinkedList.kt)
 
 
 ### SP
 #### Dijkstra
-[NetworkDelayTime](src/main/java/com/leetcode/graph/NetworkDelayTime.kt)
+[NetworkDelayTime](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/graph/NetworkDelayTime.kt)
 
 #### Bellman-Ford
-[CheapestFlightsWithinKStops](src/main/java/com/leetcode/graph/CheapestFlightsWithinKStops.kt)
+[CheapestFlightsWithinKStops](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/graph/CheapestFlightsWithinKStops.kt)
 
 ### DP
 将大问题分解成小问题，求解每个子问题的最优解，从而求出大问题的解
@@ -292,7 +291,7 @@ Output: true
 > https://www.youtube.com/watch?v=eLlZEYzZVyQ
 #### I(n) S(n) D(1)
 > D(1) 即依赖于有限个解
-**[DominoAndTrominoTiling](src/main/java/com/leetcode/dp/limited/DominoAndTrominoTiling.kt)**
+**[DominoAndTrominoTiling](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/dp/limit/DominoAndTrominoTiling.kt)**
 
 使用如下： 一 和 L 型 进行覆盖2 *N 的面板
 
@@ -315,17 +314,17 @@ XYZ YYZ XZZ XYY XXY
 ```
 > 类似题型：
 >
-> [Climbing Stairs](src/main/java/com/leetcode/dp/limited/ClimbingStairs.java)
+> [Climbing Stairs](leetcode-java/src/main/java/com/wezhyn/learn/dp/ClimbingStairs.java)
 >
-> [MinCostClimbingStairs](src/main/java/com/leetcode/dp/limited/MinCostClimbingStairs.java)
+> [MinCostClimbingStairs](leetcode-java/src/main/java/com/wezhyn/learn/dp/MinCostClimbingStairs.java)
 >
-> [House Robber](src/main/java/com/leetcode/dp/limited/HouseRobber.java)
+> [House Robber](leetcode-java/src/main/java/com/wezhyn/learn/dp/HouseRobber.java)
 >
-> [UniquePaths](src/main/java/com/leetcode/dp/limited/UniquePaths.java)
+> [UniquePaths](leetcode-java/src/main/java/com/wezhyn/learn/dp/UniquePaths.java)
 >
-> 交换数组序列【Hard】[MinimumSwapsToMakeSequencesIncreasing](src/main/java/com/leetcode/dp/limited/MinimumSwapsToMakeSequencesIncreasing.kt)
+> 交换数组序列【Hard】[MinimumSwapsToMakeSequencesIncreasing](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/dp/limit/MinimumSwapsToMakeSequencesIncreasing.kt)
 >
-> 反转字符'0' 和 ’1‘[FlipStringToMonotoneIncreasing](src/main/java/com/leetcode/dp/limited/FlipStringToMonotoneIncreasing.kt)
+> 反转字符'0' 和 ’1‘[FlipStringToMonotoneIncreasing](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/dp/limit/FlipStringToMonotoneIncreasing.kt)
 >
 
 #### I(n) S(n) D(n)
@@ -359,7 +358,7 @@ Explanation: Return true because "applepenapple" can be segmented as "apple pen 
 >
 > S(n<sup>2</sup> ) 每个子问题都需要 O(n) 的时间复杂度
 
-[BurstBalloons](src/main/java/com/leetcode/dp/BurstBalloons.kt)
+[BurstBalloons](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/dp/BurstBalloons.kt)
 
 Given n balloons, indexed from 0 to n-1.
 
@@ -380,17 +379,17 @@ Output: 167
 ```
 > 类似题目：
 >
->[StrangePrinter](src/main/java/com/leetcode/dp/StrangePrinter.kt)
+>[StrangePrinter](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/dp/StrangePrinter.kt)
 >
-> 划分成两个和相等的子序列【0-1背包问题】[PartitionEqualSubsetSum](src/main/java/com/leetcode/dp/knapsack/PartitionEqualSubsetSum.kt)
+> 划分成两个和相等的子序列【0-1背包问题】[PartitionEqualSubsetSum](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/dp/knapsack/PartitionEqualSubsetSum.kt)
 >
-> [给定金额求有多少种组合【完全背包问题】](src/main/java/com/leetcode/dp/knapsack/CoinChange2.kt)
-> [给定金额求硬币的最少数量【完全背包问题】](src/main/java/com/leetcode/dp/knapsack/CoinChange.kt)
+> [给定金额求有多少种组合【完全背包问题】](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/dp/knapsack/CoinChange2.kt)
+> [给定金额求硬币的最少数量【完全背包问题】](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/dp/knapsack/CoinChange.kt)
 #### I(O(m)+O(n))  S(MN) D(1)
 > I(O(m)+O(n)) 两个数组或字符串
 > S(MN) 二维dp 且通常依赖 dp[i-1][j-1]||dp[i-1][j]||dp[i][j-1]
 
-**[EditDistance](src/main/java/com/leetcode/dp/EditDistance.kt)**
+**[EditDistance](leetcode-java/src/main/java/com/wezhyn/learn/string/EditDistance.java)**
 
 Given two words _word1_ and _word2_, find the minimum number of operations required to convert _word1_ to _word2_.
 
@@ -429,7 +428,7 @@ exection -> execution (insert 'u')
 
 #### I(MN) S(MN) D(1)
 
-**[Unique Paths](src/main/java/com/leetcode/dp/limited/UniquePaths.java)**
+**[Unique Paths](leetcode-java/src/main/java/com/wezhyn/learn/dp/UniquePaths.java)**
 
 A robot is located at the top-left corner of a _m_ x _n_ grid (marked 'Start' in the diagram below).
 
@@ -450,14 +449,14 @@ From the top-left corner, there are a total of 3 ways to reach the bottom-right 
 ```
 
 >类似题型
-> * 求最大面积正方形： **[MaximalSquare](src/main/java/com/leetcode/dp/MaximalSquare.kt)**
-> * 求二维矩形内某一个形状的和 [RangeSumQuery2D](src/main/java/com/leetcode/dp/RangeSumQuery2D.kt)
+> * 求最大面积正方形： **[MaximalSquare](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/dp/MaximalSquare.kt)**
+> * 求二维矩形内某一个形状的和 [RangeSumQuery2D](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/dp/RangeSumQuery2D.kt)
 
 #### I(MN) S(MN) D(NN)[k,i,j]
 > dp(k,i,j) := sol of (A[0->i][0->j] after k steps) 
 > 只依赖于 1个子问题
 
-**[Out of Boundary Paths](src/main/java/com/leetcode/dp/OutOfBoundaryPaths.kt)**
+**[Out of Boundary Paths](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/dp/OutOfBoundaryPaths.kt)**
 
 There is an **m** by **n** grid with a ball. Given the start coordinate **(i,j)** of the ball, you can move the ball to **adjacent** cell or cross the grid boundary in four directions (up, down, left, right). However, you can **at most** move **N** times. Find out the number of paths to move the ball out of grid boundary. The answer may be very large, return it after mod 10<sup>9</sup> + 7.
 
@@ -479,13 +478,13 @@ Explanation:
 跳表的构建过程
 1. 在插入过程中，只保证向下和向左查找
 2. 直到最下层中找到插入位置，将target 置成随机层高，如果当前随机层高大于当前最大层高，则从head中的每一层的末尾指向当前target
-[自我丑陋版SkipList](src/main/java/com/CollectionsUtil.kt)
+[自我丑陋版SkipList](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/CollectionsUtil.kt)
 
 ![skiplist.png](https://lotabout.me/2018/skip-list/skip-list-insert-17.svg)
 
 ### 并查集
 使用一个数组保存各节点之间的连接信息，可以用来判断给定的节点是否存在环路
-[简陋版UF](src/main/java/com/UF.kt)
+[简陋版UF](leetcode-kotlin/src/main/kotlin/com/wezhyn/learn/UF.kt)
 
 ![uf.png](https://oi-wiki.org/ds/images/dsu1.png)
 
@@ -493,7 +492,7 @@ Explanation:
 
 ## Kotlin 使用
 #### 谨慎 if 表达式
-[carefulIfExpression](src/test/java/com/IfExpression.kt)
+[carefulIfExpression](leetcode-kotlin/src/test/kotlin/com/wezhyn/learn/IfExpression.kt)
 ```kotlin
 private fun add(i: Int, j: Int): Int = 2 + if (i == 1) 0 else i + if (j == 1) 0 else j
 ```
